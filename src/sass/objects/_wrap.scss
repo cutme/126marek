@@ -1,0 +1,7 @@
+.o-wrap {
+    @extend %wrap;
+    
+    &--narrow {
+        @extend %wrap--narrow;
+    }
+}

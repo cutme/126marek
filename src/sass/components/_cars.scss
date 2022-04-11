@@ -1,0 +1,81 @@
+.c-cars {
+    @extend %wrap;
+
+    .o-article {
+        padding: 125px 55px 155px 55px;
+        
+        @media ( max-width: $base + $mainpadding + px ) {
+            @include responsive-padding-top(base(125), rem(50));
+            @include responsive-padding-right(base(55), rem(0));
+            @include responsive-padding-bottom(base(155), rem(50));
+            @include responsive-padding-left(base(55), rem(0));
+        }
+        
+        h2 {
+            margin-bottom: 140px;
+            font-size: rem(38);
+            
+            @media ( max-width: $base + $mainpadding + px ) {
+                @include responsive-margin-bottom(base(140), rem(60));
+                @include responsive-font(base(38), rem(16));
+            }
+
+            @media ( max-width: $smartphone + px ) {
+            	font-family: $halisa-ext;
+            }
+        }
+        
+        h3 {
+            font: {
+                family: $halisa-ext;
+                size: rem(31);
+            }
+
+            @media ( min-width: $tablet_portrait + 1px ) {
+            	text-align: justify;
+            	letter-spacing: 2px;
+            }
+
+            @media ( max-width: $base + $mainpadding + px ) {
+                @include responsive-font(base(31), rem(16));
+            }
+        }
+        
+        ul {
+            margin: 45px 0;
+            border-top: 1px solid $c-red;
+
+            li {
+                padding: 20px 0 20px 100px;
+                border-bottom: 1px solid $c-red;
+                
+                @media ( max-width: $base + $mainpadding + px ) {
+                    @include responsive-font(base(30), rem(18));
+                    @include responsive-padding-left(base(100), rem(25));
+                }
+
+                &:before {
+                    left: 25px;
+                    top: 25px;                    
+                    
+                    @media ( max-width: $tablet_portrait + px ) {
+                        @include responsive-left(base(25), rem(5));
+                        @include responsive-top(base(25), rem(22));
+                    }
+                }
+            }
+        }
+    }
+
+    .o-banner {
+        img {
+            @media ( max-width: $smartphone + px ) {
+                object-position: left;
+            }
+        }
+    }
+
+    .o-wrap {
+        @extend %wrap;
+    }
+}

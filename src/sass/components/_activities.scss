@@ -1,0 +1,67 @@
+.c-activities {
+    background-color: $c-red;
+    color: $c-beige;
+    overflow: hidden;
+    
+    h2 {
+        height: 100px;
+        font-family: $halisa-ext;
+        font-size: rem(26);
+        
+        @media ( max-width: $base + $mainpadding + px) {
+        	@include responsive-font(base(26), rem(18));
+        	@include responsive-height(base(100), rem(80));
+        }
+        
+        @media ( min-width: $tablet + 1px ) {
+        	letter-spacing: 2px;
+        }
+    }
+
+    .o-num {
+        margin-bottom: 100px;
+        padding: 0 15px;
+        
+        @media ( max-width: $base + 2*$mainpadding + px ) {
+        	@include responsive-margin-bottom(base(100), rem(60));
+        }
+        
+        img {
+            margin: 0 auto;
+        }
+    }
+    
+    .o-scroll {
+        border-bottom: 1px solid $c-beige;
+    }
+    
+    .swiper-container {
+        width: 100%;
+        max-width: $base + px;
+        padding: 32px 0;
+    }
+    
+    .swiper-slide {
+        width: calc(100% / 5);
+        min-width: 160px;
+        height: auto;
+        padding: 100px 18px 140px 18px;
+        
+        @media ( max-width: $base + $mainpadding + px ) {
+        	@include responsive-padding-top(base(100), rem(60));
+        	@include responsive-padding-right(base(18), rem(10));
+        	@include responsive-padding-bottom(base(140), rem(60));
+        	@include responsive-padding-left(base(18), rem(10));
+        }
+        
+        &:not(:last-of-type) {
+            border-right: 1px solid $c-beige;
+        }
+        
+        p {
+            @media ( max-width: $base + $mainpadding + px) {
+            	@include responsive-font(base(30), rem(18));
+            }
+        }
+    }
+}

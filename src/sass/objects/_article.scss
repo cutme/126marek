@@ -1,0 +1,25 @@
+.o-article {
+    ul {
+        li {
+            @extend %rel;
+
+            &:before {
+                @extend %abs-pseudo;
+                font: {
+                    family: $icomoon;
+                    size: rem(18);
+                }
+                content: "\e900";
+                
+                @media ( max-width: $base + $mainpadding + px ) {
+                    @include responsive-font(base(18), rem(12));
+                }
+            }
+        }
+    }
+    
+    u {
+        border-bottom: 1px solid white;
+        white-space: nowrap;
+    }
+}

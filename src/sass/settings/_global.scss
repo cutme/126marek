@@ -1,0 +1,53 @@
+// Fonts
+
+$icomoon:           'icomoon';
+$halisa:		    'Halisa', sans-serif;
+$halisa-ext:        'Halisa Extended', sans-serif;
+$text:		        $halisa;
+
+
+
+
+// Font weights
+
+$extralight:        200;
+$light:             300;
+$regular:           400;
+$medium:            500;
+$semibold:          600;
+$bold:              700;
+$extrabold:         800;
+
+
+$z-index: (
+    hamburger:      100,
+    meta:           20,
+	top:            40,
+	nav:            50,
+	logo:           60
+);
+
+// Paths
+
+$path_img:          '../img';
+$path_fonts:        '../fonts';
+
+
+
+// Default
+
+$base-font-size:	30;
+$base:            1270;
+//$base:				1440;
+
+
+
+// Paddings
+$mainpadding:            85;
+
+// RWD
+$menu:                 1024;
+$tablet:               1024;
+$tablet_portrait:       768;
+$smartphone:			640;
+$smartphone_portrait:	500;

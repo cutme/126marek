@@ -1,0 +1,14 @@
+.o-container {
+    @extend %rel;
+    overflow: hidden;
+    
+    padding-top: 250px;
+	
+	@media ( max-width: $base + $mainpadding + px) {
+    	@include responsive-padding-top(base(250), rem(150));
+    }
+    
+    @media ( max-width: $menu + px ) {
+        padding-top: 80px;
+    }
+}

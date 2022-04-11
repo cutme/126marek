@@ -1,0 +1,106 @@
+.c-authors {    
+    figure {
+        @extend %flex;
+        
+        @media ( min-width: $tablet + 1px ) {
+            width: 50%;
+        }
+        
+        @media ( max-width: $smartphone_portrait + px ) {
+        	display: block;
+        }
+        
+        figcaption {
+            padding: 25px;
+            
+            @media ( min-width: $smartphone_portrait + 1px ) {
+                width: 50%;
+            }
+            
+            @media ( max-width: $smartphone_portrait + px ) {
+            	padding-top: 45px;
+            }
+        }
+        
+        &:first-of-type {
+            ul {
+                li {
+                    &:last-child {
+                        border: none;
+                    }
+                }
+            }
+            
+            @media ( min-width: $smartphone_portrait + 1px ) and ( max-width: $tablet + px ) {
+            	border-bottom: 1px solid $c-red;
+            }
+        }
+        
+        &:last-of-type {
+            img {
+                object-position: right;
+            }
+            
+            ul {
+                li {
+                    &:last-child {
+                        @media ( max-width: $tablet_portrait + px ) {
+                            border: none;                        	
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    h2 {
+        margin-bottom: 1em;
+        text-transform: uppercase;
+        font: {
+            family: $halisa-ext;
+            size: rem(26);
+        }
+        line-height: 31px;
+        letter-spacing: 2px;
+        
+        @media ( max-width: $smartphone_portrait + px ) {
+            margin-bottom: 40px;
+        	font-size: rem(30);
+        }
+    }
+    
+    img {
+        width: 50%;
+        object-fit: cover;
+
+        @media ( max-width: $smartphone_portrait + px ) {
+        	width: 100%;
+        }
+    }
+
+    ul {
+        border-top: 1px solid $c-red;
+
+        li {
+            border-bottom: 1px solid $c-red;
+            padding: 14px 0;
+            line-height: 21.6px;
+            font-size: rem(18);
+            
+            @media ( max-width: $smartphone_portrait + px ) {
+            	font-size: rem(20);
+            }
+        }
+    }  
+    
+    .o-cols {
+        border: {
+            top: 1px solid $c-red;
+            bottom: 1px solid $c-red;
+        }
+        
+        @media ( max-width: $tablet + px ) {
+        	display: block;
+        }
+    }
+}

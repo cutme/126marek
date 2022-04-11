@@ -1,0 +1,176 @@
+$art_height: 636;
+$img_width: 797;
+
+.c-idea {
+    @extend %wrap;
+    padding: {
+        top: 160px;
+        bottom: 146px;
+    }
+    
+    @media ( max-width: $base + $mainpadding + px) {
+    	@include responsive-padding-bottom(base(146), rem(40));
+    	@include responsive-padding-top(base(160), rem(80));
+    }
+    
+    &__article {
+        @extend %rel;
+    }
+    
+    .o-img {
+        @extend %abs;
+        width: grid(777);
+        display: block;
+        transition: all 300ms ease-in-out;
+        transform: scale3d(0,0,0);
+        pointer-events: none;
+        
+        @media ( max-width: $smartphone + px ) {
+        	display: none;
+        }
+        
+        &.bottom-left {
+            transform-origin: left bottom;
+        }
+        
+        &.bottom-right {
+            transform-origin: right bottom;
+        }
+        
+        &.center {
+            transform-origin: center center;           
+        }
+        
+        &.top-left {
+            transform-origin: left top;
+        }
+        
+        &.top-right {
+            transform-origin: right top;
+        }
+    }
+    
+    .o-dot {
+        @extend %abs; z-index: 15; 
+        @extend %flex;
+        @extend %flex-xy;
+        @extend %abs;
+        width: 39px; height: 39px;
+        background: {
+            image: url(../img/idea/dot.svg);
+            size: contain;
+            repeat: no-repeat;
+        }
+        font: {
+            size: rem(24);
+        }
+        cursor: pointer;
+        color: $c-beige;
+        
+        @media ( max-width: $base + $mainpadding + px ) {
+            @include responsive-height(base(39), rem(0));
+        	width: grid(39);
+        }
+        
+        @media ( max-width: $smartphone + px ) {
+        	display: none;
+        }
+        
+        &:hover {
+            z-index: 25;
+
+            & + .o-img {
+                z-index: 20;
+                transform: scale3d(1, 1, 1);                
+            }
+        }
+        
+        &--126 {
+            top: grid(-15, $art_height);
+            left: grid(50);
+            
+            & + .o-img {
+                top: grid(15);
+                left: grid(67);
+            }
+        }
+        
+        &--historii {
+            bottom: grid(180, $art_height);
+            right: grid(140);
+            
+            & + .o-img {
+                bottom: grid(198, $art_height);
+                right: grid(158);
+            }
+        }
+        
+        &--marek {
+            top: grid(-20, $art_height);
+            right: grid(365);
+
+            & + .o-img {
+                top: grid(0, $art_height);
+                right: grid(380);
+            }
+        }
+        
+        &--marketingu {
+            bottom: grid(52, $art_height);
+            right: grid(365);
+            
+            & + .o-img {
+                top: grid(0, $art_height);
+                right: grid(380);
+            }
+        }
+        
+        &--na {
+            top: grid(370, $art_height);
+            left: grid(410);
+            
+            & + .o-img {
+                bottom: grid(-40, $art_height);
+                left: grid(40);
+            }
+            
+            &:hover {
+                opacity: 0;
+            }
+        }
+        
+        &--przez {
+            top: grid(250, $art_height);
+            right: grid(490);
+            
+            & + .o-img {
+                top: grid(-20);
+                left: grid(367);
+            }
+            
+            &:hover {
+                opacity: 0;
+            }
+        }
+        
+        &--socjologii {
+            bottom: grid(-50, $art_height);
+            left: grid(190);
+            
+            & + .o-img {
+                bottom: grid(-32, $art_height);
+                left: 210px;
+            }
+        }
+        
+        &--to {
+            top: grid(190, $art_height);
+            left: grid(-19);
+            
+            & + .o-img {
+                top: grid(209, $art_height);
+                left: 0;
+            }
+        }        
+    }
+}

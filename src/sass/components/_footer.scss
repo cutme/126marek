@@ -1,0 +1,17 @@
+.c-footer {
+    @extend %wrap;
+    border-top: 1px solid $c-red;
+    padding: {
+        top: 30px;
+        bottom: 40px;
+    }
+    
+    p {
+        font-size: rem(18);
+        text-align: justify;
+        
+        @media ( max-width: $base + $mainpadding + px) {
+        	@include responsive-font(base(18), rem(14));
+        }
+    }
+}

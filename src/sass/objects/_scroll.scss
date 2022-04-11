@@ -1,0 +1,56 @@
+.o-scroll {
+    @extend %rel;
+    @extend %flex;
+    @extend %flex-y;
+    width: 100vw;
+    height: 234px;
+    left: 50%;
+    right: 50%;
+    white-space: nowrap;
+    margin: {
+        left: -50vw;
+        right: -50vw;
+    }
+    overflow: hidden;
+    
+    @media ( max-width: $base + $mainpadding + px ) {
+        @include responsive-height(base(234), rem(136));
+    }
+    
+    p {
+        @extend %rel;
+        display: inline-block;
+        margin-right: 100px;
+        text-transform: uppercase;
+        font: {
+            family: $halisa-ext;
+            size: rem(48);
+        }
+        line-height: 58px;
+        letter-spacing: -1px;
+        white-space: nowrap;
+        
+        @media ( max-width: $base + $mainpadding + px) {
+        	@include responsive-font(base(48), rem(30));
+        }
+        
+        &:after {
+            @extend %abs-pseudo;
+            right: -15px; top: 50%;
+            transform: translate3d(100%, -50%, 0);
+            font: {
+                size: rem(30);
+                family: $icomoon;
+            }
+            content: "\e900";
+            
+            @media ( max-width: $base + $mainpadding + px) {
+            	@include responsive-font(base(30), rem(18));
+            }
+        }
+    }
+    
+    .ticker-items {
+        display: inline-block;
+    }
+}

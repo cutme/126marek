@@ -1,0 +1,94 @@
+.c-social {
+    @extend %wrap;
+    padding: {
+        top: 60px;
+        bottom: 60px;
+    }
+    
+    @media ( min-width: $tablet + 1px ) {
+        display: flex;
+    }
+
+    h2 {
+        text-transform: uppercase;
+        font: {
+            family: $halisa-ext;
+            size: rem(31);
+        }
+        line-height: 37px;
+        
+        @media ( max-width: $base + $mainpadding + px) {
+            @include responsive-font(base(31), rem(28));
+        }
+        
+        @media ( max-width: $tablet + px ) {
+            margin-bottom: 40px;
+        }
+
+        .icon-arrow {
+            font-size: rem(20);
+        }
+    }
+    
+    ul {
+        @media ( min-width: $tablet + 1px ) {
+            display: flex;
+            margin: 0 0 0 auto;        	
+        }
+
+        li {
+            @extend %rel;
+
+            &:not(:first-child) {
+                @media ( min-width: $tablet + 1px ) {
+                    padding-left: 60px;
+                }
+            }
+            
+            &:before {
+                @extend %abs-pseudo;
+                left: 0; top: 50%;
+                transform: translateY(-50%);
+                font: {
+                    family: $icomoon;
+                    size: rem(16);
+                }
+                content: "\e900";
+                
+                @media ( min-width: $tablet + 1px ) {
+                	display: none;
+                }
+            }
+            
+            @media ( max-width: $tablet + px ) {
+            	border-top: 1px solid $c-red;
+            	padding: {
+                	top: 20px;
+                	bottom: 20px;
+                	left: 35px;
+            	}
+            }
+
+            a {
+                text-transform: uppercase;
+                font: {
+                    family: $halisa-ext;
+                    size: rem(32);
+                }
+                letter-spacing: 2px;
+                
+                @media ( max-width: $base + $mainpadding + px) {
+                    @include responsive-font(base(32), rem(20));
+                }
+                
+                @media ( max-width: $tablet + px ) {
+                	display: block;
+                }
+                
+                &:hover {
+                    color: darken($c-red, 10%);
+                }
+            }
+        }
+    }
+}

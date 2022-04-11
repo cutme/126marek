@@ -1,0 +1,335 @@
+.c-training {
+    background-color: $c-blue;
+    color: $c-beige;
+    overflow: hidden;
+    
+    header {
+        h2 {
+            margin-bottom: 34px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid black;
+            text-transform: uppercase;
+            font: {
+                family: $halisa-ext;
+                size: rem(31);
+            }
+            
+            @media ( min-width: $tablet + 1px ) {
+            	letter-spacing: 2px;
+            }
+            
+            @media ( max-width: $smartphone + px ) {
+                margin-bottom: 20px;
+                padding-bottom: 20px;
+            }
+            
+            @media ( max-width: $base + $mainpadding + px) {
+            	@include responsive-font(base(31), rem(17));
+            }
+        }
+    }
+    
+    &__details {
+        padding-bottom: 150px;
+        
+        @media ( max-width: $base + $mainpadding + px) {
+        	@include responsive-padding-bottom(base(150), rem(40));
+        }
+
+        ul {
+            @extend %flex;
+            width: 100%;
+
+            li {
+                @extend %rel;
+                flex: 1;
+                padding-right: 25px;
+                
+                &:not(:last-child) {
+                    border-right: 1px solid black;
+                } 
+                
+                &:not(:first-child) {
+                    @media ( min-width: $smartphone + 1px ) {
+                        padding-left: 25px;
+                    }
+                }                               
+            }
+        }
+        
+        &--arrows {
+            ul {
+                @media ( max-width: 1240px ) {
+                	display: block;
+                	margin-top: -30px;
+                }
+
+                li {
+                    &:before {
+                        @extend %abs-pseudo;
+                        left: 0; top: 10px;
+                        font: {
+                            family: $icomoon;
+                            size: rem(18);
+                        }
+                        content: "\e900";
+                        
+                        @media ( max-width: $base + $mainpadding + px) {
+                        	@include responsive-font(base(18), rem(16));
+                        	@include responsive-top(base(10), rem(4));
+                        }
+                        
+                        @media ( max-width: 1240px ) {
+                            @include responsive-top(base(30), rem(24));
+                        }
+                    }
+                                        
+                    &:first-child {
+                        padding-left: 25px;
+                        
+                        @media ( max-width: 1240px ) {
+                            padding: 20px 0 20px 30px;
+                        }
+                    }
+                    
+                    &:not(:first-child) {
+                        @media ( min-width: 1241px ) {
+                            margin-left: 25px;
+                        }
+                        
+                        @media ( max-width: 1240px ) {
+                            padding: 20px 0 20px 30px;
+                        }
+                    }
+                    
+                    &:not(:last-child) {
+                        @media ( max-width: 1240px ) {
+                            border-right: none;
+                        }
+                    }
+                    
+                    @media ( max-width: $base + $mainpadding + px) {
+                    	@include responsive-font(base(30), rem(18));
+                    }
+                    
+                    @media ( max-width: 1240px ) {
+                        border-bottom: 1px solid black;
+                        
+                    }
+                }
+            }
+        }
+        
+        &--deadlines {
+            ul {
+                border-top: 1px solid black;
+                
+                @media ( min-width: $smartphone + 1px ) {
+                    border-bottom: 1px solid black;
+                    padding: 34px 0;
+                }
+                
+                @media ( max-width: $smartphone + px ) {
+                	display: block;
+                }
+                
+                li {
+                    @media ( max-width: $smartphone + px ) {
+                        display: flex;
+                        padding: 20px 0;
+                        border-bottom: 1px solid black;
+                        justify-content: space-between;
+                    }
+                    
+                    &:not(:last-child) {
+                        @media ( max-width: $smartphone + px ) {
+                            border-right: none;
+                        }
+                    }
+                }
+            }
+            
+            p {
+                @media ( max-width: $base + $mainpadding + px) {
+                	@include responsive-font(base(30), rem(18));
+                }
+            }
+            
+            .icon-arrow {
+                @media ( min-width: $smartphone + 1px ) {
+                    display: block;
+                    margin-top: 6px;
+                    font-size: rem(20);
+                }
+                
+                @media ( max-width: $smartphone + px ) {
+                	font-size: rem(14);
+                }
+            }
+        }
+        
+        &--price {            
+            .o-cols {
+                @media ( max-width: $smartphone_portrait + px ) {
+                	display: block;
+                }
+                
+                &__item {
+                    &:first-of-type {
+                        @media ( min-width: $smartphone_portrait + 1px ) {
+                            flex: 1;
+                        }
+                        
+                        @media ( max-width: $smartphone_portrait + px ) {
+                            padding-bottom: 50px;
+                        }
+                    }
+
+                    &:last-of-type {
+                        @media ( min-width: $smartphone_portrait + 1px ) {
+                            width: grid(865);
+                        }
+                        
+                        p {
+                            @media ( max-width: $base + $mainpadding + px) {
+                            	@include responsive-font(base(30), rem(18));
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .o-price {
+                p {
+                    font-family: $halisa-ext;
+                    
+                    &:first-of-type {
+                        padding-right: 40px;
+                        font: {
+                            family: $halisa-ext;
+                            size: rem(48);
+                        }
+                        letter-spacing: -1px;
+                        
+                        @media ( max-width: $base + $mainpadding + px) {
+                        	@include responsive-font(base(48), rem(22));
+                        }
+                    }
+                    
+                    &:last-of-type {
+                        font-size: rem(26);
+                        
+                        @media ( min-width: $tablet + 1px ) {
+                        	letter-spacing: 2px;
+                        }
+
+                        @media ( max-width: $base + $mainpadding + px) {
+                        	@include responsive-font(base(26), rem(17));
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .o-article {
+        @extend %rel;
+        padding: {
+            top: 110px;
+            left: grid(405);
+        }
+        
+        @media ( max-width: $base + $mainpadding + px) {
+        	@include responsive-padding-top(base(110), rem(0));
+        }
+        
+        @media ( max-width: $smartphone_portrait + px ) {
+        	padding-left: 0;
+        }
+        
+        &:first-of-type {
+            border-top: 1px solid black;
+            padding-bottom: 250px;
+            
+            @media ( max-width: $base + $mainpadding + px) {
+            	@include responsive-padding-bottom(base(250), rem(70));
+            }
+        }
+        
+        &:last-of-type {
+            border-top: 1px solid black;
+            padding-bottom: 120px;
+            
+            @media ( max-width: $base + $mainpadding + px) {
+            	@include responsive-padding-bottom(base(120), rem(50));
+            }
+        }
+        
+        h2 {
+            margin-bottom: 100px;
+            font: {
+                family: $halisa-ext;
+                size: rem(31);
+            }
+            
+            @media ( min-width: $tablet + 1px ) {
+            	letter-spacing: 2px;
+            }
+            
+            @media ( max-width: $base + $mainpadding + px ) {
+            	@include responsive-font(base(31), rem(17));
+            	@include responsive-margin-bottom(base(100), rem(40));
+            }
+        }
+        
+        img {            
+            &.o-logo {
+                
+                @media ( min-width: $smartphone_portrait + 1px ) {
+                	position: absolute;
+                	left: 0; top: 60px;
+                }
+
+                @media ( min-width: $smartphone_portrait + 1px ) and ( max-width: $base + 2*$mainpadding + px ) {
+                	@include responsive-width(base(162), rem(96));
+                	@include responsive-top(base(60), rem(0));
+                }
+                
+                @media ( max-width: $smartphone_portrait + px ) {
+                	width: 96px;
+                	margin-bottom: 50px;
+                }
+            }
+        }
+        
+        ul {
+            li {
+                padding-left: 35px;
+                
+                @media ( max-width: $base + $mainpadding + px ) {
+                	@include responsive-font(base(30), rem(18));
+                }
+                
+                &:before {
+                    left: 0; top: 10px;
+
+                    @media ( max-width: $base + $mainpadding + px ) {
+                        @include responsive-top(base(10), rem(-10));
+                    }
+                    
+                    @media ( max-width: 960px ) {
+                    	top: 6px;
+                    }
+                }
+                
+                &:not(:last-child) {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+    
+    .o-wrap {
+        @extend %wrap;
+    }
+}

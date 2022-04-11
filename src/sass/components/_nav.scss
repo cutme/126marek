@@ -1,0 +1,241 @@
+.c-nav {
+    margin: 0 0 0 auto;
+    
+    &__authors {
+        @extend %flex;
+        @extend %flex-wrap;
+        @extend %rel;
+        color: white;
+        
+        @media ( min-width: $menu + 1px ) {
+        	display: none;
+        }
+
+        &:after {
+            @extend %abs-pseudo;
+            left: -36px; top: 100%;
+            width: calc(100% + 72px); height: 1px;
+            background-color: white;
+            
+            @media ( max-width: $smartphone + px ) {
+            	left: -26px;
+            	width: calc(100% + 52px);
+            }
+        }
+
+        li {
+            width: 50%;
+            padding: 28px 0;
+            
+            .o-big {
+                margin-bottom: 5px;
+                white-space: nowrap;
+
+                a {
+                    font-size: rem(18);
+                    
+                    &:first-of-type {
+                        margin-right: 8px;
+                        padding-right: 15px;
+                        border-right: 1px solid white;
+                    }
+                }
+            }
+            
+            .o-label {
+                margin-bottom: 14px;
+                text-transform: uppercase;
+                font-size: rem(14);
+            }
+            
+            .o-medium {
+                font-size: rem(16);
+            }
+        }
+        
+        &--contact {
+            li {
+                .o-label {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        
+        &--organizer {
+            address {
+                p {
+                    font-size: rem(11);
+                }
+            }
+            
+            &:after {
+                display: none;
+            }
+            
+            li {
+                width: auto;
+                
+                &:last-of-type {
+                    padding: 55px 0 0 26px;
+                }
+            }
+        }
+    }
+    
+    &__links {
+        @extend %rel;
+        @extend %flex;
+        
+        @media ( max-width: $menu + px ) {
+            padding-bottom: 20px;            	
+        }
+        
+        &:after {
+            @extend %abs-pseudo;
+            left: -36px; top: 100%;
+            width: calc(100% + 72px); height: 1px;
+            background-color: white;
+            
+            @media ( min-width: $menu + 1px ) {
+            	display: none;
+            }
+            
+            @media ( max-width: $smartphone + px ) {
+            	left: -26px;
+            	width: calc(100% + 52px);
+            }
+        }
+    
+        li {
+            margin-left: 36px;
+            
+            @media ( max-width: 1240px ) {
+            	margin-left: 20px;
+            }
+            
+            @media ( max-width: $menu + px ) {
+            	margin-left: 0;
+            }
+
+            a {
+                @extend %ulink;
+                white-space: nowrap;
+                text-transform: uppercase;
+                font-size: rem(18);
+                
+                @media ( max-width: 1240px ) {
+                    font-size: rem(16);
+                }
+                
+                &:before, &:after {
+                    background-color: $c-red;
+                }
+            }
+        }
+    }
+
+    &__menu {
+        @extend %rel;        
+    }
+    
+    @media ( max-width: $menu + px ) {
+    	display: none;
+        position: fixed;
+        width: 100%;
+        height: calc(100vh - 90px);
+//        height: calc(100vh - 116px);
+        left: 0;
+        top: 116px;
+        background-color: $c-blue;
+        padding: {
+            left: 36px;
+            right: 36px;
+        }
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transform: translate3d(100%, 0, 0);
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+            
+        @media ( max-width: $smartphone + px ) {
+            padding: {
+                left: 26px;
+                right: 26px;
+            }
+        }
+        
+        .c-nav {
+            &__links {
+                flex-direction: column;
+                width: 100%;
+                
+                li {
+                    margin-bottom: 5px;
+
+                    a {
+                        position: relative;
+                        margin: 0 auto;
+                        justify-content: center;
+                        font-size: rem(25);
+                        color: white;
+
+                        &:before {
+                            position: absolute;
+                            transition: all 250ms ease-out;
+                            display: block;
+                            left: 0; top: 0; z-index: -1;
+                            width: 100%; height: 100%;
+                            border-radius: 10px;
+                            background-color: red;
+                            opacity: 0;
+                            content: ' ';
+                        }
+                    }
+                }
+            }
+            &__menu {
+                display: block;
+                padding: {
+                    top: 15px;
+                    bottom: 60px;
+                }
+                	
+                ul {
+                    &:not(.c-nav__authors) {
+                        
+                    }
+                }
+            }
+        }
+        
+        .is-animated & {
+            transform: translate3d(-100%, 0, 0);
+            
+            .c-nav__menu {        
+                ul {
+                    li {
+                        &.is-active {                            
+                            a {
+                                color: white;
+                                
+                                &:before {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+        
+        &.is-block {
+            display: block;
+        }
+        
+        &.is-visible {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }        
+    }
+}
